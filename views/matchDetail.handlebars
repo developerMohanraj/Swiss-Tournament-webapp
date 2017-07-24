@@ -1,0 +1,20 @@
+<table class="table table-inverse" >
+    <thead>
+        <tr>
+            <th class="text-center">Round</th>
+            <th class="text-center">Player Name</th>
+            <th class="text-center">Player Name</th>
+            <th class="text-center">Winner</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each matches}}
+        <tr>
+            <td><p class="text-center">{{this.round}}</p></td>
+            <td><p class="text-center">{{this.player_one.name}}</p></td>
+            <td><p class="text-center">{{this.player_two.name}}</p></td>
+            <td><p class="text-center">{{this.winner.name}}</p></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+            <meta charset="utf-8" />
+            <title>SwissyMent-dashboard</title>
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="./../public/dashboard.js"></script>
+            <script type="text/javascript" src="/public/css/notify.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <% include ./header %>
+                </div>
+                <div class="row">
+                    <p><%=name%>, You have <strong><%=tourn.length%> tournaments</strong> from history</p>
+                </div>
+                <div class="tournyTable">
+                    <div class="panel panel-primary">
+                        <table class="table tournyTable hidden " >
+                            <thead>
+                                <div>
+                                    <tr class="panel-heading">
+                                        <th class="text-center">Tournament</th>
+                                        <th class="text-center">Status</th>
+                                    </tr>
+                                </div>
+
+                            </thead>
+                            <tbody id="tournyBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Example App</title>
+        <style>
+            body  {
+                background-image: url("/public/image/bg.jpg");
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/public/css/notify.min.js"></script>
+        <script type="text/javascript" src="/tournamentAjaxCalls.js"></script>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="modal fade" id="myModal" role="document">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" >
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title" id="modalHeader"></h4>
+                        </div>
+                        <div class="modal-body" id="modalBody">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button id="modalClose" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <% include ./header %>
+            </div>
+            <div class="row ">
+                <div class="col-md-6 ">
+                    <input class="form-control hidden" id="tourneyName" value="<%= tournament.tournament_name %>">
+                    <h3 class="text-center"><kbd>Player List</kbd></h3>
+                    <div class="input-group">
+                        <input type="text" id="playername" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" id="addplayer" type="button">Add</button>
+                        </span>
+                    </div>
+                    <table class="table table-striped " >
+                        <thead>
+                            <tr>
+                                <th class="text-center">Player Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="playerTableContent">
+
+                        </tbody>
+                    </table>
+                    <hr>
+                </div>
+                <div class="col-md-6 ">
+                    <button id="startTournament" class="glyphicon glyphicon-play-circle btn  btn-info btn-lg btn-block" >Start
+                    </button>
+                    <h3 class="text-center"><kbd>Current Standing</kbd></h3>
+                    <table class="table table-striped" >
+                        <thead>
+                            <tr>
+                                <th class="text-center">Player</th>
+                                <th class="text-center">Points</th>
+                            </tr>
+                        </thead>
+                        <tbody id="currentStanding">
+                        </tbody>
+                    </table>
+                    <hr>
+                </div>
+                <div class="row jumbotron">
+                    <table class="table table-inverse" >
+                        <thead>
+                            <tr>
+                                <th class="text-center">Round</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Details</th>
+                                <th class="text-center">Current Result</th>
+                            </tr>
+                        </thead>
+                        <tbody id="statusBoard">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+
+<table class="table table-striped" id="tblGrid">
+    <thead id="tblHead">
+        <tr>
+            <th class="text-center">Player One</th>
+            <th class="text-center">Player Two</th>
+            <th class="text-center">Match</th>
+            <th class="text-center">Declare</th>
+        </tr>
+    </thead>
+    <tbody id="modalBodyTable">
+        {{#each matches}}
+        <tr id="deleteafterupdate">
+            <td>
+                {{this.player_one.name}}
+            </td>
+            <td>
+                {{this.player_two.name}}
+            </td>
+            <td>
+                <div class= " col-md-6 ">
+                    <select class="form-control" name="winner" id="selectWinner">
+                        <option value="">Select Winner</option>
+                        <option value="{{this.player_one._id}}">{{this.player_one.name}}</option>
+                        <option value="{{this.player_two._id}}">{{this.player_two.name}}</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <button type="submit" id="submitWinner" class="btn btn-info btn-xs">confirm winner</button>
+            </td>
+        </tr>
+        {{/each}}
+
+
+    </tbody>
+</table>
+
+
+
+

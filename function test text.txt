@@ -1,0 +1,80 @@
+addPlayer("Mohanraj")
+addPlayer("Aravind")
+addPlayer("Kumaresan")
+addPlayer("Faisal")
+addPlayer("Seliyan")
+addPlayer("Guna")
+addPlayer("Ram")
+addPlayer("Umar")
+================================
+
+swissPairing(1);
+declareWinner(1,"Mohanraj");
+declareWinner(1,"Faisal");
+declareWinner(1,"Seliyan");
+declareWinner(1,"Umar");
+
+================================
+
+       {
+    firstName: 'Mohan',
+  lastName: 'raj',
+  email: 'mohanraj.s@mountblue.io',
+  password: 'sourcecode',
+  address: 'Tamilnadu-636502',
+  mobile: 9976901801
+
+        }
+===================================
+tournament_name: "ABJ Generation Chess war"
+    tour_owner :
+    players    :
+    matches    :
+});
+=====================================
+
+<table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th>No</th>
+                        <th>Players</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <% for(var i = 0; i < players.length; ++i) { %>
+                                <td><%=i+1%></td>
+                                <td><%= players[i] %></td>
+                            <% } %>
+                    </tbody>
+                </table>
+var=['5960cc265c94761d3aa100ef','5960cc2d5c94761d3aa100f1','5960cc315c94761d3aa100f3','5960cc6d5c94761d3aa100f6']
+----------------------------------------------------------------------------------------------------------
+
+var tournamentObject=new model.Tournament({
+                tournament_name:tournament,
+                tour_owner     :userDetails._id
+            })
+            tournamentObject.save(function(err,result) {
+            if(err){
+                throw err;
+            }
+                userDetails.tournament.push(result._id)
+                userDetails.save(function(err, result) {
+                if (err){
+                    throw err;
+                }
+                cb();
+            })
+        })
+===================================================================================================
+
+if(res.status){
+                    if(res.status=="exist"){
+                        $('#playername').notify("Player already added in this tournament")
+                    }
+                    if(res.status=="dbError"){
+                        $('#playername').notify("something went wrong. Please try again")
+                    }
+                }

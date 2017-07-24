@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+            <meta charset="utf-8" />
+            <title>Tournaments</title>
+
+            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <% include ./header %>
+            </div>
+            <div class="row">
+                <div class=" col-md-12">
+                    <form method="post" action="/addplayer">
+
+                        <span>
+                            Add Players Here
+                        </span>
+                        <div class="form-group">
+                            <label >Player Name</label>
+                            <input class="form-control" name="playername" type="text">
+                        </div>
+
+                        <button id="submit" name="submit" class="btn btn-lg btn-block btn-primary"> Add New Player
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+            <hr>
+            </div>
+            <div class="row">
+                <form method="get" action="/dashboard/tournament/status">
+                    <div class="col col-md-6">
+                        <label>Select Your Tournament=></label>
+                        <select class="bootstrap-select" name="tName">
+                            <% for(var i = 0; i < tourn.length; ++i) { %>
+                                <option value="<%= tourn[i] %>">
+                                <%= tourn[i] %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="col col-md-6">
+                        <button class="btn  btn-success btn-lg btn-block" > Tournament Status
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
